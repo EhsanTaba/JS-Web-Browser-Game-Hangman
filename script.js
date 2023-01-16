@@ -75,11 +75,36 @@ const displayOptions = () => {
     optionsContainer.appendChild(buttonCon);
 };
 
+//Generation of the words
+const generateWord = (optionValue) => {
+    let optionsButtons = document.querySelectorAll(".options");
+
+//If optionValue the button innerText then highlight the button
+optionsButtons.forEach((button) =>{
+    if (button.innerText.toLowerCase() === optionValue) {
+        button.classList.add("active");
+    }
+button.disabled = true;
+});
+};
+
 //Function (Called when page loads/user presses new game)
 
 const initializer = () => {
     winCount = 0;
     count = 0;
+
+//Createe letter buttons
+for (let i = 65; i < 91; i++) {
+    let button = document.createElement("button");
+    button.classList.add("letters");
+
+    //string.fromCharCode() is a string method to create a string from a 
+//unicode(letter symbols and didgits that have its own unicode)sequence.(source is w3schools)
+button.innerText = String.fromCharCode(i);
+letterContainer.append(button);
+}
+
     displayOptions();
 };
 
