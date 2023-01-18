@@ -55,3 +55,36 @@ body {
     color: #000000;
 }
 
+.letter-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6em;
+}
+
+#letter-container button {
+    height: 2.4em;
+    width: 2.4em;
+    border-radius: 0.3em;
+    border-color: #5F9EA0;
+    background-color: #ffffff;
+}
+
+.newGamePopUp {
+background-color: #5F9EA0;
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+border-radius: 0.6em;
+}
+
+.hide {
+display: none;
+}

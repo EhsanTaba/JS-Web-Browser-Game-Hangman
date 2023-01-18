@@ -27,7 +27,7 @@ let options = {
 
 colors: ["Lavender",
 "Gold",
-"Navy Blue",
+"Blue",
 "Pink",
 "Green",
 "Turquoise",
@@ -43,14 +43,14 @@ camping: ["Tent",
 
 dogs: ["German Shepherd",
 "Dalmation",
-"French Bulldog",
+"Frenchie",
 "Golden Retriever",
 "Lab",
 "Pitbull",
 ],
 
 food: ["Pizza",
-"Chicken Nuggets",
+"Nuggets",
 "Burger",
 "Sandwich",
 "Steak",
@@ -75,6 +75,23 @@ const displayOptions = () => {
     optionsContainer.appendChild(buttonCon);
 };
 
+//blocking the buttons
+const blocker = () => {
+    let optionsButtons = document.querySelectorAll(".options");
+    let letterButtons = document.querySelectorAll(".letters");
+
+//options disabled
+optionsButtons.forEach((button) => {
+    button.disabled = true;
+});
+
+//letters disabled
+letterButtons.forEach((button) => {
+    button.disabled.true;
+});
+newGameContainer.classList.remove("hide");
+};
+
 //Generation of the words
 const generateWord = (optionValue) => {
     let optionsButtons = document.querySelectorAll(".options");
@@ -86,6 +103,18 @@ optionsButtons.forEach((button) =>{
     }
 button.disabled = true;
 });
+
+//hide letters in the begining, and clear the previous word
+letterContainer.classList.remove("hide");
+userInputSection.innerText = "";
+
+let optionArray = options[optionValue];
+
+//random word chooser
+chosenWord = optionArray[Math.floor(Math.random
+    () *  optionArray.length )];
+    chosenWord = chosenWord.toUpperCase();
+   console.log(chosenWord);
 };
 
 //Function (Called when page loads/user presses new game)
